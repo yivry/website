@@ -5,16 +5,6 @@ body {
     background-color: #18181b;
 }
 
-@media (min-width: 600px) {
-    body {
-        font-size: 1.5em;
-    }
-
-    #content {
-        width: 600px;
-    }
-}
-
 h1, h2 {
     font-weight: bold;
     color: #bd6d00;
@@ -36,12 +26,12 @@ a:hover {
 }
 
 #footer {
-    font-size: 70%;
+    font-size: 80%;
     padding-left: 1.1em;
 }
 
 .smaller {
-    font-size: smaller;
+    font-size: 90%;
 }
 
 .breadcrumbs {
@@ -53,4 +43,22 @@ a:hover {
 ul {
     margin-left: 0;
     padding-left: 1.1em;
+}
+
+@media (min-width: 600px) {
+    body {
+        font-size: 1.5em;
+    }
+
+    #content {
+        width: 600px;
+    }
+
+    .smaller {
+        font-size: smaller;
+    }
+
+    #footer {
+        font-size: 70%;
+    }
 }
