@@ -14,8 +14,12 @@ require __DIR__ . '/../vendor/autoload.php';
 
 ModListFinder::setDefaultListFile();
 
+$isDev = (getenv('DEV') ?? '0') === '1';
+
 $container = new Container();
-$container->set(Twig::class, fn() => Twig::create(__DIR__ . '/../templates', ['cache' => __DIR__ . '/../cache/']));
+$container->set(Twig::class, fn() => Twig::create(__DIR__ . '/../templates', [
+    'cache' => $isDev ? false : __DIR__ . '/../cache/',
+]));
 
 $app = Bridge::create($container);
 

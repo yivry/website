@@ -4,9 +4,18 @@
 
 {% block content %}
 <h1>Welcome to Yivry.com</h1>
-<p>This site is (and has always been) under construction.</p>
-<h2>Here are some links for now</h2>
+<p>The personal website of Yivry, a Twitch streamer.</p>
+
+<h2>About Me</h2>
+<p>
+    Gamer, Husband, Dad, Software Developer, Autistic, Dutch, CE(S)T.<br/>
+    Associate member of the <a href="https://red-circuit.org">Red Circuit</a> stream team.<br/>
+    Most likely to stream Mon/Wed 21:30 to late.<br/>
+</p>
+
+<h2>Most important links</h2>
 <ul>
+    <li><a href="{{ url_for('mods') }}">Mod Lists</a></li>
     <li><a href="https://twitch.yivry.com">My Twitch channel</a></li>
     <li>
         <a href="https://youtube.yivry.com">My YouTube channel</a>
@@ -15,6 +24,5 @@
     <li><a href="https://discord.yivry.com">My Discord server</a></li>
     <li><a href="https://tip.yivry.com">Donations</a></li>
     <li><a href="https://merch.yivry.com">Merch</a></li>
-    <li><a href="{{ url_for('mods') }}">Mod Lists</a></li>
 </ul>
 {% endblock %}
