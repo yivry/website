@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Mod Lists{% endblock %}
+
+{% block content %}
+<h1>Mod Lists</h1>
+<div class="breadcrumbs">
+    <a href="{{ url_for('home') }}">Home</a> &gt;
+    Mod Lists
+</div>
+
+<p>Below are the mod lists of recent playthroughs, grouped by game.</p>
+
+{% for category, modlists in list %}
+    <h2>{{ category }}</h2>
+    <ul>
+        {% for modlist in modlists %}
+            <li><a href="{{ url_for('mod', { 'id': modlist }) }}">{{ modlist }}</a></li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+{% endblock %}

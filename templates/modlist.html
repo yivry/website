@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Mod List: {{ list.name }}{% endblock %}
+
+{% block content %}
+<h1>Mod List: {{ list.name }}</h1>
+<div class="breadcrumbs">
+    <a href="{{ url_for('home') }}">Home</a> &gt;
+    <a href="{{ url_for('mods') }}">Mod Lists</a> &gt;
+    {{ list.name }}
+</div>
+<p><b>Game</b>: {{ category }}</p>
+<p>{{ list.desc }}</p>
+<p class="smaller">
+    Each mod has its required dependencies listed beneath it; dependencies<br />
+    have been de-duplicated. * is an included optional dependency.
+</p>
+<h2>Main mods</h2>
+<div class="smaller">
+    {{ include('mod.html', {list: list.main}, with_context = false) }}
+</div>
+<h2>Other mods</h2>
+<div class="smaller">
+    {{ include('mod.html', {list: list.other}, with_context = false) }}
+</div>
+{% endblock %}

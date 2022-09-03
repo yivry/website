@@ -1,0 +1,10 @@
+{% if list is not empty %}
+<ul>
+    {% for mod in list %}
+        <li>
+            <a href="https://mods.factorio.com/mod/{{ mod.id }}" target="blank">{{ mod.name }}</a>{% if mod.opt %}*{% endif %}
+            {{ include('mod.html', {list: mod.deps}, with_context = false) }}
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}
