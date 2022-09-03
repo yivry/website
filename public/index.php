@@ -8,13 +8,15 @@ use Slim\Views\TwigMiddleware;
 use Yivry\Website\Controllers\Home;
 use Yivry\Website\Controllers\Mod;
 use Yivry\Website\Controllers\Mods;
+use Yivry\Website\ErrorRenderer;
 use Yivry\Website\ModListFinder;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-ModListFinder::setDefaultListFile();
-
+// See `make dev`
 $isDev = (getenv('DEV') ?? '0') === '1';
+
+ModListFinder::setDefaultListFile();
 
 $container = new Container();
 $container->set(Twig::class, fn() => Twig::create(__DIR__ . '/../templates', [
@@ -26,6 +28,11 @@ $app = Bridge::create($container);
 // Middlewares
 $app->add(new TrailingSlash());
 $app->add(TwigMiddleware::createFromContainer($app, Twig::class));
+
+// Error Middleware should always be last
+$app->addErrorMiddleware($isDev, false, false)
+    ->getDefaultErrorHandler()
+    ->registerErrorRenderer('text/html', ErrorRenderer::class);
 
 // Routes
 $app->get('/mods/{id}', Mod::class)->setName('mod');

@@ -4,6 +4,7 @@ namespace Yivry\Website\Controllers;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Slim\Exception\HttpNotFoundException;
 use Slim\Views\Twig;
 use Yivry\Website\ModListFinder;
 
@@ -25,7 +26,7 @@ class Mod
         $list = $this->modListFinder->getList($id);
 
         if ($list === null) {
-            throw new \Exception("Todo: handle invalid id ({$id})");
+            throw new HttpNotFoundException($request);
         }
 
         return $this->twig->render($response, 'modlist.html', [
