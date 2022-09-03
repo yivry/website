@@ -7,7 +7,10 @@
 </head>
 <body>
     <div id="wrapper">
-        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="content">
+            {% block content %}{% endblock %}
+            <div id="footer">&copy; Yivry 2021 - {{ "now"|date('Y') }}</div>
+        </div>
     </div>
 </body>
 </html>

@@ -31,12 +31,16 @@ a:hover {
     justify-content: center;
 }
 
+#footer {
+    font-size: 70%;
+}
+
 .smaller {
     font-size: smaller;
 }
 
 .breadcrumbs {
     margin-top: -1em;
-    font-size: 75%;
+    font-size: 80%;
     color: gray;
 }
