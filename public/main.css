@@ -37,6 +37,7 @@ a:hover {
 
 #footer {
     font-size: 70%;
+    padding-left: 1.1em;
 }
 
 .smaller {
@@ -50,5 +51,6 @@ a:hover {
 }
 
 ul {
+    margin-left: 0;
     padding-left: 1.1em;
 }
