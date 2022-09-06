@@ -182,4 +182,19 @@ return [
             "id" => "trainsaver",
         ],
     ],
+    "map" => <<<MAP
+        >>>eNp1Ub2LE0EUnzGGO6McEdIcyJniKmEtTgsLyY6HKCJa+Qe42Z2Y
+        gd2d3OzsSc7CFFcqYqmNaW3sLK4LCKKgIFrZnWjhgcKJ4jVCfG83k/3
+        I5cF78+b3e58zlFBymSQysFEbR13p+OaGCoDv5YGaK3s9riypeB4+5q
+        rY45YUhewaD3nQt9pOVAiudKXO3xeFkmG54vGe74RcW5HYKuD1iFttr
+        vq+L+JgJglIV/VlKHQBXwK8K/3gkBSkhBLeHCrgugtzWMKdoUJnI56T
+        tSm0E3BY4E6BOoFU7LtOeT4k7joa3rXUpxppGRYRrTiPCkvHCgrODkL
+        o3sHo8WB7haCO75PmeIwK3i58OSqhA0JGEAmYkarri06HkOYl0PUkiN
+        J7jRdXv2xt2zSNOcsmzv4EGbUNcs04N9lcatU453N1ziXyO+ekTTW0m
+        EQtsszJJoLxbn2rb0Rndlr03/NfH2+0b9v04c+Xw4PXwxaQC7jCkal5
+        +gRlx6xCTM1de0J9tun7dyg/bFrFjAYadgHM6HqF0PoSeMMHYJqniBm
+        tZco0GO0k8tds8tU4n+zyHvAQF7H4Cpo3aJKG08lo6rJHjLLThl3OQi
+        B/jeRn8LIN35q2r3L9S4PMfkR+jxKyyg75hho29Kbme2U6DbznhwVzY
+        88YraCDUX8AS2/ImFLpWWfJc6+RTPZtsnfySvc/tM7znA==<<<
+        MAP,
 ];

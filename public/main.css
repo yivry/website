@@ -28,6 +28,7 @@ a:hover {
 #footer {
     font-size: 80%;
     padding-left: 1.1em;
+    margin-top: 1em;
 }
 
 .smaller {
@@ -43,6 +44,26 @@ a:hover {
 ul {
     margin-left: 0;
     padding-left: 1.1em;
+}
+
+.code {
+    white-space: pre;
+    border: 1px solid #c2c2c9;
+    background-color: #43434b;
+    color: #c2c2c9;
+    padding: 0.5em;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    font-size: 60%;
+}
+
+.select-all {
+    -webkit-touch-callout: all; /* iOS Safari */
+    -webkit-user-select: all; /* Safari */
+    -khtml-user-select: all; /* Konqueror HTML */
+    -moz-user-select: all; /* Firefox */
+    -ms-user-select: all; /* Internet Explorer/Edge */
+    user-select: all; /* Chrome and Opera */
 }
 
 @media (min-width: 600px) {
