@@ -8,4 +8,5 @@ no-dev: clean
 	php -S localhost:8888 -t public/
 
 deploy:
-	ssh yivry "bash -lc \"cd yivry.com && ./newrelease\""
+	@echo "Executing remote deploy"
+	@ssh yivry "bash -lc \"cd yivry.com && ./newrelease\""
