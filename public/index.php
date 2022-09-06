@@ -10,6 +10,7 @@ use Yivry\Website\Controllers\Mod;
 use Yivry\Website\Controllers\Mods;
 use Yivry\Website\ErrorRenderer;
 use Yivry\Website\ModListFinder;
+use Yivry\Website\TwigCreator;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -19,9 +20,7 @@ $isDev = (getenv('DEV') ?? '0') === '1';
 ModListFinder::setDefaultListFile();
 
 $container = new Container();
-$container->set(Twig::class, fn() => Twig::create(__DIR__ . '/../templates', [
-    'cache' => $isDev ? false : __DIR__ . '/../cache/',
-]));
+$container->set(Twig::class, TwigCreator::create($isDev));
 
 $app = Bridge::create($container);
 
