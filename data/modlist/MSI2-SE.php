@@ -152,18 +152,22 @@ return [
             "id" => "calculator-ui",
         ],
         [
+            "name" => "Factory Planner",
+            "id" => "factoryplanner",
+            "deps" => [
+                [
+                    "name" => "Factorio Library",
+                    "id" => "flib",
+                ],
+            ],
+        ],
+        [
             "name" => "FNEI",
             "id" => "FNEI",
         ],
         [
             "name" => "Rate Calculator",
             "id" => "RateCalculator",
-            "deps" => [
-                [
-                    "name" => "Factorio Library",
-                    "id" => "flib",
-                ],
-            ]
         ],
         [
             "name" => "Researched What?",
