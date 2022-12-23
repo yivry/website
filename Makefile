@@ -1,3 +1,5 @@
+install: vendor/autoload.php
+
 clean:
 	rm -rf cache/*
 
@@ -10,3 +12,9 @@ no-dev: clean
 deploy:
 	@echo "Executing remote deploy"
 	@ssh yivry "bash -lc \"cd yivry.com && ./newrelease\""
+
+vendor/autoload.php: composer.lock composer.json
+	@composer install
+
+stan: vendor/autoload.php
+	@vendor/bin/phpstan analyze

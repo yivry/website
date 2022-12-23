@@ -1,0 +1,12 @@
+parameters:
+    level: max
+
+    paths:
+        - data
+        - public
+        - src
+
+    ignoreErrors:
+        - # We know for sure this is Slim's ErrorHandler, not a callable
+            message: '#^Cannot call method registerErrorRenderer\(\) on callable\.$#'
+            path: public/index.php

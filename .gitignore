@@ -1,3 +1,5 @@
 /vendor/
 composer
 /public/.hash
+.idea
+phpstan.neon

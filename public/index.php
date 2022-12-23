@@ -15,7 +15,7 @@ use Yivry\Website\TwigCreator;
 require __DIR__ . '/../vendor/autoload.php';
 
 // See `make dev`
-$isDev = (getenv('DEV') ?? '0') === '1';
+$isDev = (getenv('DEV') ?: '0') === '1';
 
 ModListFinder::setDefaultListFile();
 

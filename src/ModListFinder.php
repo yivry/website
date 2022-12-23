@@ -2,6 +2,7 @@
 
 namespace Yivry\Website;
 
+use LogicException;
 use Webmozart\Assert\Assert;
 
 class ModListFinder
@@ -10,6 +11,7 @@ class ModListFinder
     
     private static string $listFile;
 
+    /** @var array<string, array{"category": string, "list": callable}> */
     private array $modList = [];
 
     public static function setListFile(string $listFile): void
@@ -24,6 +26,11 @@ class ModListFinder
         self::setListFile(self::DEFAULT_LIST_FILE);
     }
 
+    /**
+     * Definition of list below is actually a recursive (so unsupported) template T of array&lt;string, string|T&gt;
+     *
+     * @return array{"category": string, "list": array<string, mixed>}|null
+     */
     public function getList(string $id): ?array
     {
         $this->loadModList();
@@ -43,6 +50,9 @@ class ModListFinder
         ];
     }
 
+    /**
+     * @return array<string, string[]>
+     */
     public function getOrderedAvailableLists(): array
     {
         $this->loadModList();
@@ -75,7 +85,7 @@ class ModListFinder
         }
 
         if (!isset(self::$listFile)) {
-            throw new \Exception("Missing list file, use one of `setListFile()` or `setDefaultListFile()`");
+            throw new LogicException("Missing list file, use one of `setListFile()` or `setDefaultListFile()`");
         }
 
         $this->modList = require self::$listFile;
