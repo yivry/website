@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 $getModList = static fn (string $name): array => require __DIR__ . "/modlist/{$name}.php";
 
 return [
     'MSI2-SE' => [
         "category" => "Factorio",
-        "list" => (fn() => $getModList('MSI2-SE')),
-    ]
+        "list" => (fn () => $getModList('MSI2-SE')),
+    ],
 ];

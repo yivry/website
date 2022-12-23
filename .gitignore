@@ -1,5 +1,6 @@
-/vendor/
+.idea/
+.php-cs-fixer.cache
 composer
-/public/.hash
-.idea
 phpstan.neon
+public/.hash
+vendor/

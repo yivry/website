@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     "name" => "MSI2-SE",
     "desc" => "Mining Space Industries II with Space Exploration",
@@ -145,7 +147,7 @@ return [
                     "id" => "FluidWagonColorMask",
                     "opt" => true,
                 ],
-            ]
+            ],
         ],
         [
             "name" => "Calculator UI",

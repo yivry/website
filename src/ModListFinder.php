@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yivry\Website;
 
 use LogicException;
@@ -8,7 +10,7 @@ use Webmozart\Assert\Assert;
 class ModListFinder
 {
     private const DEFAULT_LIST_FILE = __DIR__ . '/../data/modlists.php';
-    
+
     private static string $listFile;
 
     /** @var array<string, array{"category": string, "list": callable}> */
