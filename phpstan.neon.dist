@@ -5,6 +5,7 @@ parameters:
         - data
         - public
         - src
+        - .php-cs-fixer.dist.php
 
     ignoreErrors:
         - # We know for sure this is Slim's ErrorHandler, not a callable

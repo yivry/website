@@ -26,5 +26,5 @@ stan: vendor/autoload.php
 	@vendor/bin/phpstan analyze
 
 vendor/autoload.php: composer.lock composer.json
-	@composer install
+	@./composer install
 	@touch -c vendor/autoload.php

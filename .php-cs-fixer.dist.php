@@ -11,7 +11,16 @@ $finder = Finder::create()
     ->exclude('templates')
     ->in(__DIR__);
 
+$ruleOverrides = [
+    'no_extra_blank_lines' => [
+        'tokens' => [
+            'break', 'case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block',
+            'return', 'square_brace_block', 'throw',
+        ],
+    ],
+];
+
 return (new Config('Yivry.com'))
     ->setFinder($finder)
     ->setRiskyAllowed(true)
-    ->setRules(Rules::getForPhp81());
+    ->setRules(Rules::getForPhp81($ruleOverrides));
