@@ -10,17 +10,12 @@ use Slim\Exception\HttpNotFoundException;
 use Slim\Views\Twig;
 use Yivry\Website\ModListFinder;
 
-class Mod
+final class ModsController
 {
-    private ModListFinder $modListFinder;
-    private Twig $twig;
-
     public function __construct(
-        ModListFinder $modListFinder,
-        Twig $twig
+        private readonly ModListFinder $modListFinder,
+        private readonly Twig $twig,
     ) {
-        $this->modListFinder = $modListFinder;
-        $this->twig = $twig;
     }
 
     public function __invoke(ServerRequestInterFace $request, ResponseInterface $response, string $id): ResponseInterface

@@ -8,13 +8,11 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
 
-class Home
+final class HomeController
 {
-    private Twig $twig;
-
-    public function __construct(Twig $twig)
-    {
-        $this->twig = $twig;
+    public function __construct(
+        private readonly Twig $twig,
+    ) {
     }
 
     public function __invoke(ServerRequestInterFace $request, ResponseInterface $response): ResponseInterface

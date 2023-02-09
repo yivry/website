@@ -9,17 +9,12 @@ use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
 use Yivry\Website\ModListFinder;
 
-class Mods
+final class ListModsController
 {
-    private ModListFinder $modListFinder;
-    private Twig $twig;
-
     public function __construct(
-        ModListFinder $modListFinder,
-        Twig $twig
+        private readonly ModListFinder $modListFinder,
+        private readonly Twig $twig,
     ) {
-        $this->modListFinder = $modListFinder;
-        $this->twig = $twig;
     }
 
     public function __invoke(ServerRequestInterFace $request, ResponseInterface $response): ResponseInterface

@@ -1,0 +1,25 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Psr\Container;
+
+/**
+ * Describes the interface of a container that exposes methods to read its entries.
+ */
+interface ContainerInterface
+{
+    /**
+     * @template T of object
+     *
+     * @param class-string<T> $id Identifier of the entry to look for.
+     *
+     * @return T Entry.
+     */
+    public function get(string $id);
+
+    /**
+     * @param class-string $id Identifier of the entry to look for.
+     */
+    public function has(string $id): bool;
+}

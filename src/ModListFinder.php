@@ -4,32 +4,31 @@ declare(strict_types=1);
 
 namespace Yivry\Website;
 
-use LogicException;
 use Webmozart\Assert\Assert;
 
-class ModListFinder
+final class ModListFinder
 {
     private const DEFAULT_LIST_FILE = __DIR__ . '/../data/modlists.php';
 
-    private static string $listFile;
+    private string $listFile;
 
     /** @var array<string, array{"category": string, "list": callable}> */
     private array $modList = [];
 
-    public static function setListFile(string $listFile): void
+    public function setListFile(string $listFile): void
     {
         Assert::fileExists($listFile);
 
-        self::$listFile = $listFile;
+        $this->listFile = $listFile;
     }
 
-    public static function setDefaultListFile(): void
+    public function setDefaultListFile(): void
     {
-        self::setListFile(self::DEFAULT_LIST_FILE);
+        $this->setListFile(self::DEFAULT_LIST_FILE);
     }
 
     /**
-     * Definition of list below is actually a recursive (so unsupported) template T of array&lt;string, string|T&gt;
+     * Definition of "list" below is actually a recursive template T of array&lt;string, string|T&gt;
      *
      * @return array{"category": string, "list": array<string, mixed>}|null
      */
@@ -86,10 +85,10 @@ class ModListFinder
             return;
         }
 
-        if (!isset(self::$listFile)) {
-            throw new LogicException("Missing list file, use one of `setListFile()` or `setDefaultListFile()`");
+        if (!isset($this->listFile)) {
+            $this->setDefaultListFile();
         }
 
-        $this->modList = require self::$listFile;
+        $this->modList = require $this->listFile;
     }
 }

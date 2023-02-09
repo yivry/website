@@ -7,7 +7,5 @@ parameters:
         - src
         - .php-cs-fixer.dist.php
 
-    ignoreErrors:
-        - # We know for sure this is Slim's ErrorHandler, not a callable
-            message: '#^Cannot call method registerErrorRenderer\(\) on callable\.$#'
-            path: public/index.php
+    stubFiles:
+        - stubs/ContainerInterface.php.stub

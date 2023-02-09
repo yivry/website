@@ -2,19 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Yivry\Website;
+namespace Yivry\Website\Framework;
 
 use Slim\Error\Renderers\HtmlErrorRenderer;
 use Slim\Views\Twig;
 
-class ErrorRenderer extends HtmlErrorRenderer
+final class ErrorRenderer extends HtmlErrorRenderer
 {
-    private Twig $twig;
-
     public function __construct(
-        Twig $twig
+        private readonly Twig $twig,
     ) {
-        $this->twig = $twig;
     }
 
     public function renderHtmlBody(string $title = '', string $html = ''): string
