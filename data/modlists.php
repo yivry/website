@@ -9,4 +9,8 @@ return [
         "category" => "Factorio",
         "list" => $getModList('MSI2-SE'),
     ],
+    "Yivry's Mods" => [
+        "category" => "Factorio",
+        "list" => $getModList('Yivrys-Mods'),
+    ],
 ];

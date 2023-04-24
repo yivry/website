@@ -19,10 +19,12 @@
 <div class="smaller">
     {{ include('mod.html', {list: list.main}, with_context = false) }}
 </div>
+{% if list.other %}
 <h2>Other mods</h2>
 <div class="smaller">
     {{ include('mod.html', {list: list.other}, with_context = false) }}
 </div>
+{% endif %}
 {% if list.map %}
 <h2>Map</h2>
 <div class="code select-all">{{ list.map }}</div>
