@@ -20,6 +20,10 @@ a:hover {
     text-decoration: underline;
 }
 
+p {
+    text-align: justify;
+}
+
 #wrapper {
     display: flex;
     justify-content: center;
@@ -33,6 +37,10 @@ a:hover {
 
 .smaller {
     font-size: 90%;
+}
+
+.darker {
+    opacity: 0.5;
 }
 
 .breadcrumbs {
@@ -68,7 +76,7 @@ ul {
 
 @media (min-width: 600px) {
     body {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 
     #content {
